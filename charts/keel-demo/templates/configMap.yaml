@@ -1,0 +1,27 @@
+apiVersion: v1
+metadata:
+  name: {{ include "keel-demo.fullname" . }}-content
+  labels:
+    app.kubernetes.io/name: {{ include "keel-demo.name" . }}
+    helm.sh/chart: {{ include "keel-demo.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+data:
+  index.html: |
+    <!doctype html>
+    <html lang=en>
+        <head>
+            <meta charset=utf-8>
+            <title>Keel Demo</title>
+
+            <meta name="description" content="Simple demo of Keel.">
+            <meta name="author" content="Moonswitch">
+        </head>
+        <body>
+            <p>I'm the content</p>
+            <p>App Version: {{ .Chart.AppVersion }}</p>
+            <p>Chart Version: {{ .Chart.Version }}</p>
+            <p>Release Revision: {{ .Release.Revision }}</p>
+        </body>
+    </html>
+kind: ConfigMap
