@@ -50,8 +50,8 @@ affinity: {}
 keel:
   # keel policy (all/major/minor/patch/force)
   policy: all
-  trigger: poll
-  pollSchedule: '@every 2m'
+  approvals: 1
+  approvalDeadline: 24
   # images to track and update
   images:
     - repository: image.repository
