@@ -22,6 +22,8 @@ data:
             <p>App Version: {{ .Chart.AppVersion }}</p>
             <p>Chart Version: {{ .Chart.Version }}</p>
             <p>Release Revision: {{ .Release.Revision }}</p>
+            <p>Image Repository: {{ .Values.image.repository }}</p>
+            <p>Image Tag: {{ .Values.image.tag }}</p>
         </body>
     </html>
 kind: ConfigMap

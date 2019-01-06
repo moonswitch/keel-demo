@@ -5,19 +5,19 @@
 replicaCount: 1
 
 image:
-  repository: nginx
-  tag: stable
+  repository: moonswitch/keel-demo
+  tag: latest
   pullPolicy: IfNotPresent
 
 nameOverride: ""
 fullnameOverride: ""
 
 service:
-  type: ClusterIP
+  type: LoadBalancer
   port: 80
 
 ingress:
-  enabled: true
+  enabled: false
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
